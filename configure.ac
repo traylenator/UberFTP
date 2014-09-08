@@ -109,7 +109,7 @@ AC_ARG_WITH(globus,
 
 if test "x$globus_location" == "x/usr" ; then
 	# RPM installation
-	CPPFLAGS=-I$globus_location/lib64/globus/include
+	CPPFLAGS="-I$globus_location/lib64/globus/include -I$globus_location/lib/globus/include"
 	AC_CHECK_HEADERS([globus_config.h],
 	                 [GLOBUS_CONFIG_CPPFLAGS="$CPPFLAGS"], 
 	                 [AC_MSG_ERROR(globus_config.h not found, install globus-core)])
